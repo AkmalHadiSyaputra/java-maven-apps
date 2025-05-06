@@ -8,7 +8,8 @@ pipeline {
     stages {
         stage('Build Jar') {
             steps {
-                sh 'mvn package'
+                sh 'mvn clean package'
+                sh 'ls -lah target' // cek apakah .jar sudah ada
             }
         }
 
