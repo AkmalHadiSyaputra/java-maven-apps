@@ -9,7 +9,7 @@ pipeline {
         stage('Build Jar') {
             steps {
                 sh 'mvn clean package'
-                sh 'ls -lah target' // cek apakah .jar sudah ada
+                sh 'ls -lah target' // DEBUG: cek apakah file .jar sudah ada
             }
         }
 
@@ -28,9 +28,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                script {
-                    echo "Deploying the application..."
-                }
+                echo "Deploying the application..."
             }
         }
     }
